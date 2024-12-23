@@ -10,8 +10,6 @@ class App {
 }
 
 fun main() {
-    val firstResult = DayOne.first("data01.csv")
+    val firstResult = DayTwo.first("data02.csv")
     println(firstResult)
-    val secondResult = DayOne.second("data01.csv")
-    println(secondResult)
 }

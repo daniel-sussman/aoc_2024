@@ -23,5 +23,16 @@ class Importer {
 
             return result
         }
+
+        fun extractRows(filepath: String): List<List<Int>> {
+            val csvFile = ClassLoader.getSystemResourceAsStream(filepath) ?: throw IllegalArgumentException("Cannot find $filepath")
+            return csvFile.bufferedReader().useLines { lines ->
+                lines.mapIndexed { index, row ->
+                    row.split(",").mapIndexed { columnIndex, value ->
+                        value.trim().toInt()
+                    }
+                }.toList()
+            }
+        }
     }
 }
