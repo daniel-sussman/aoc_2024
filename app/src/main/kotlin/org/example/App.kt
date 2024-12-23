@@ -1,5 +1,7 @@
 package org.example
 
+import kotlin.math.abs
+
 class App {
     val greeting: String
         get() {
@@ -8,5 +10,6 @@ class App {
 }
 
 fun main() {
-    println(App().greeting)
+    val result = DayOne.first("data01.csv")
+    println(result)
 }
