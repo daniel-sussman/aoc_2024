@@ -16,5 +16,17 @@ class DayOne {
 
             return totalDiff
         }
+
+        public fun second(filepath: String): Int {
+            val (firstColumn, secondColumn) = Importer.extract(filepath)
+            var similarityScore = 0
+
+            for (i in 0 until firstColumn.size) {
+                val n = firstColumn[i]
+                val count = secondColumn.count { it == n }
+                similarityScore += n * count
+            }
+            return similarityScore
+        }
     }
 }
