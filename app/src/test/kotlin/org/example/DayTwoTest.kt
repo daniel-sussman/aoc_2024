@@ -6,7 +6,13 @@ import org.junit.jupiter.api.Test
 class DayTwoTest {
     @Test
     fun partOneIsCorrect() {
-        val result = DayTwo.first("testdata02.csv")
-        assertEquals(2, result)
+        val firstResult = DayTwo.first("testdata02.csv")
+        assertEquals(2, firstResult)
+    }
+
+    @Test
+    fun partTwoIsCorrect() {
+        val secondResult = DayTwo.second("testdata02.csv")
+        assertEquals(4, secondResult)
     }
 }
