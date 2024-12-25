@@ -36,6 +36,14 @@ class Importer {
             }
         }
 
+        fun extractMatrix(filepath: String): List<List<Char>> {
+            val inputStream = ClassLoader.getSystemResourceAsStream(filepath) ?: throw IllegalArgumentException("File not found: $filepath")
+
+            return inputStream.bufferedReader().use { reader ->
+                reader.readLines().map { line -> line.toList() }
+            }
+        }
+
         fun extractText(filepath: String): String {
             val inputStream = ClassLoader.getSystemResourceAsStream(filepath) ?: throw IllegalArgumentException("Cannot find $filepath")
             return InputStreamReader(inputStream).use { reader ->
