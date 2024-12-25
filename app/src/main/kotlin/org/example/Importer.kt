@@ -1,6 +1,7 @@
 package org.example
 
 import java.io.File
+import java.io.InputStreamReader
 
 class Importer {
     companion object {
@@ -32,6 +33,13 @@ class Importer {
                         value.trim().toInt()
                     }
                 }.toList()
+            }
+        }
+
+        fun extractText(filepath: String): String {
+            val inputStream = ClassLoader.getSystemResourceAsStream(filepath) ?: throw IllegalArgumentException("Cannot find $filepath")
+            return InputStreamReader(inputStream).use { reader ->
+                reader.readText()
             }
         }
     }
