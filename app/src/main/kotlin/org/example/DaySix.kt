@@ -1,27 +1,50 @@
 package org.example
 
 class DaySix(filepath: String) {
-    private val matrix = Importer.extractMatrix(filepath)
+    private val matrix = Importer.extractMatrix(filepath).map { it.toMutableList() }.toMutableList()
     private val rows = matrix.size
     private val cols = matrix[0].size
-    private val path = Array(rows) { Array(cols) { 0 } }
-    private var bearing = 'n'
-    private var x: Int
-    private var y: Int
-
-    init {
-        val (x, y) = getInitialPosition(matrix)
-        this.x = x
-        this.y = y
-    }
+    private var path = Array(rows) { Array(cols) { mutableSetOf<Char>() } }
+    private var bearing = '~'
+    private var x: Int = -1
+    private var y: Int = -1
 
     public fun first(): Int {
+        initializeInstance()
+
         while (coordsValid()) {
-            path[y][x] = 1
+            if (bearing in path[y][x]) return -1
+
+            path[y][x].add(bearing)
             update()
         }
 
         return sumValues(path)
+    }
+
+    private fun initializeInstance() {
+        val (x, y) = getInitialPosition(matrix)
+        this.x = x
+        this.y = y
+        path = Array(rows) { Array(cols) { mutableSetOf<Char>() } }
+        bearing = 'n'
+    }
+
+    public fun second(): Int {
+        var result = 0
+        for (i in 0 until rows) {
+            for (j in 0 until cols) {
+                val originalValue = matrix[i][j]
+
+                if (originalValue == '#') continue
+
+                matrix[i][j] = '#'
+                if (first() == -1) result++
+                matrix[i][j] = originalValue
+            }
+        }
+
+        return result
     }
 
     private fun move(coords: Pair<Int, Int>) {
@@ -60,8 +83,14 @@ class DaySix(filepath: String) {
         throw Exception("Invalid bearing")
     }
 
-    private fun sumValues(matrix: Array<Array<Int>>): Int {
-        return matrix.sumOf { row -> row.sum() }
+    private fun sumValues(matrix: Array<Array<MutableSet<Char>>>): Int {
+        var result = 0
+        for (p in matrix) {
+            for (q in p) {
+                if (q.size > 0) result++
+            }
+        }
+        return result
     }
 
     private fun getInitialPosition(matrix: List<List<Char>>): Pair<Int, Int> {
