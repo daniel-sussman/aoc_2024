@@ -10,8 +10,8 @@ class App {
 }
 
 fun main() {
-    val firstResult = DaySeven.first("data07.txt")
+    val firstResult = DayEight("data08.txt").first()
     println(firstResult)
-    val secondResult = DaySeven.second("data07.txt")
-    println(secondResult)
+//    val secondResult = DaySeven.second("data07.txt")
+//    println(secondResult)
 }
