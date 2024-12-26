@@ -16,6 +16,15 @@ class DayEight(filepath: String) {
         return countAntinodes()
     }
 
+    public fun second(): Int {
+        mapAntennas()
+        for (key in map.keys) {
+            val antennas = map[key] ?: mutableSetOf()
+            modelUsingResonantHarmonics(antennas)
+        }
+        return countAntinodes()
+    }
+
     private fun mapAntennas() {
         for (y in 0 until rows) {
             for (x in 0 until cols) {
@@ -35,6 +44,25 @@ class DayEight(filepath: String) {
             }
         }
     }
+
+    private fun modelUsingResonantHarmonics(antennas: MutableSet<Pair<Int, Int>>) {
+        for (a in antennas) {
+            val otherAntennas = antennas.filter { it != a }
+            for (b in otherAntennas) {
+                val dx = b.first - a.first
+                val dy = b.second - a.second
+                var x = a.first + dx
+                var y = a.second + dy
+                while (areValidCoords(x, y)) {
+                    addAntinode(x, y)
+                    x += dx
+                    y += dy
+                }
+            }
+        }
+    }
+
+    private fun areValidCoords(x: Int, y: Int) = (x >= 0 && x < cols && y >= 0 && y < rows)
 
     private fun addAntinode(x: Int, y: Int) {
         if (x >= 0 && x < cols && y >= 0 && y < rows) {

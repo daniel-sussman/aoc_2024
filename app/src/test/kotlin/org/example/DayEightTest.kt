@@ -13,6 +13,6 @@ class DayEightTest {
     @Test
     fun partTwoIsCorrect() {
         val secondResult = DayEight("testdata08.txt").second()
-        assertEquals(6, secondResult)
+        assertEquals(34, secondResult)
     }
 }
