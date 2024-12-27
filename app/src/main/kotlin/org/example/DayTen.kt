@@ -36,6 +36,13 @@ class DayTen(filepath: String) {
         return result
     }
 
+    public fun second(): Int {
+        var result = 0
+        addChildrenToNodes()
+        trailheads.forEach { trailhead -> result += advancedRating(trailhead) }
+        return result
+    }
+
     private fun buildNodeMap(): Array<Array<Node>> {
         return Array(rows) { y ->
             Array(cols) { x ->
@@ -66,6 +73,21 @@ class DayTen(filepath: String) {
                 visited.add(child)
                 queue.offer(child)
             } }
+            if (node.value == 9) score++
+        }
+
+        return score
+    }
+
+    private fun advancedRating(trailhead: Node): Int {
+        val queue: Queue<Node> = LinkedList()
+        var score = 0
+
+        queue.addAll(trailhead.children)
+
+        while (queue.isNotEmpty()) {
+            val node = queue.poll()
+            node.children.forEach { child -> queue.offer(child) }
             if (node.value == 9) score++
         }
 
