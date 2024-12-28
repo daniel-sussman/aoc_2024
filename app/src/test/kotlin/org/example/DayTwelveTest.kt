@@ -10,9 +10,9 @@ class DayTwelveTest {
         assertEquals(1930, firstResult)
     }
 
-//    @Test
-//    fun partTwoIsCorrect() {
-//        val secondResult = DayTen("testdata10.txt").second()
-//        assertEquals(81, secondResult)
-//    }
+    @Test
+    fun partTwoIsCorrect() {
+        val secondResult = DayTwelve("testdata12.txt").second()
+        assertEquals(1206, secondResult)
+    }
 }

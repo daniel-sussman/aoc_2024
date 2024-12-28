@@ -10,24 +10,30 @@ class DayTwelve(filepath: String) {
     private val whiteboard: MutableList<MutableList<Char>> = input.map { it.toMutableList() }.toMutableList()
 
     public fun first(): Int {
-        println("getting plots...")
         val plots = getPlots()
-        println("getting regions...")
         val regions = getRegions(plots)
-
-        println("calculating prices...")
         return calculatePrice(regions)
     }
 
     public fun second(): Int {
-        var result = 0
-        return result
+        val plots = getPlots()
+        val regions = getRegions(plots)
+        return calculateSpecialPrice(regions)
     }
 
     private fun calculatePrice(regions: Set<Region>): Int {
         var total = 0
         for (region in regions) {
             total += region.area() * region.perimeter()
+        }
+        return total
+    }
+
+    private fun calculateSpecialPrice(regions: Set<Region>): Int {
+        var total = 0
+        for (region in regions) {
+//            println("A region of ${region.plant} plants with price ${region.area()} * ${region.numberOfSides()} = ${region.area() * region.numberOfSides()}")
+            total += region.area() * region.numberOfSides()
         }
         return total
     }
@@ -76,9 +82,17 @@ class DayTwelve(filepath: String) {
     class Region(private val firstPlot: Plot) {
         public val plots: MutableSet<Plot> = mutableSetOf(firstPlot)
         public val plant: Char = firstPlot.plant
+        public var topmost: Int = firstPlot.y
+        public var bottommost: Int = firstPlot.y
+        public var leftmost: Int = firstPlot.x
+        public var rightmost: Int = firstPlot.x
 
         public fun addPlot(plot: Plot) {
             plots.add(plot)
+            if (plot.y < topmost) topmost = plot.y
+            if (plot.y > bottommost) bottommost = plot.y
+            if (plot.x < leftmost) leftmost = plot.x
+            if (plot.x > rightmost) rightmost = plot.x
         }
 
         public fun perimeter(): Int {
@@ -87,6 +101,98 @@ class DayTwelve(filepath: String) {
                 result += plot.getPerimeter()
             }
             return result
+        }
+
+        private fun rows(): Array<MutableList<Plot>> {
+            val rows = Array(bottommost - topmost + 1) { mutableListOf<Plot>() }
+            for (plot in plots) {
+                val index = plot.y - topmost
+                rows[index].add(plot)
+            }
+            return rows
+        }
+
+        private fun columns(): Array<MutableList<Plot>> {
+            val columns = Array(rightmost - leftmost + 1) { mutableListOf<Plot>() }
+            for (plot in plots) {
+                val index = plot.x - leftmost
+                columns[index].add(plot)
+            }
+            return columns
+        }
+
+        public fun numberOfSides(): Int {
+            var sides = 0
+            sides += countTopAndBottomSides()
+            sides += countLeftAndRightSides()
+            return sides
+        }
+
+        private fun countLeftAndRightSides(): Int {
+            var sides = 0
+            for (col in columns()) {
+                col.sortBy { plot -> plot.y }
+                var leftContiguous = false
+                var rightContiguous = false
+                var expectedY = -1
+
+                for (plot in col) {
+                    if (plot.y != expectedY) {
+                        expectedY = plot.y
+                        leftContiguous = false
+                        rightContiguous = false
+                    }
+
+                    if (plot.hasExteriorLeft() && !leftContiguous) {
+                        leftContiguous = true
+                        sides++
+                    } else if (!plot.hasExteriorLeft() && leftContiguous) {
+                        leftContiguous = false
+                    }
+                    if (plot.hasExteriorRight() && !rightContiguous) {
+                        rightContiguous = true
+                        sides++
+                    } else if (!plot.hasExteriorRight() && rightContiguous) {
+                        rightContiguous = false
+                    }
+                    expectedY++
+                }
+            }
+
+            return sides
+        }
+
+        private fun countTopAndBottomSides(): Int {
+            var sides = 0
+            for (row in rows()) {
+                row.sortBy { plot -> plot.x }
+                var topContiguous = false
+                var bottomContiguous = false
+                var expectedX = -1
+
+                for (plot in row) {
+                    if (plot.x != expectedX) {
+                        expectedX = plot.x
+                        topContiguous = false
+                        bottomContiguous = false
+                    }
+                    if (plot.hasExteriorTop() && !topContiguous) {
+                        topContiguous = true
+                        sides++
+                    } else if (!plot.hasExteriorTop() && topContiguous) {
+                        topContiguous = false
+                    }
+                    if (plot.hasExteriorBottom() && !bottomContiguous) {
+                        bottomContiguous = true
+                        sides++
+                    } else if (!plot.hasExteriorBottom() && bottomContiguous) {
+                        bottomContiguous = false
+                    }
+                    expectedX++
+                }
+            }
+
+            return sides
         }
 
         public fun area(): Int {
@@ -101,23 +207,28 @@ class DayTwelve(filepath: String) {
 
         public fun getPerimeter(): Int {
             var numberOfAdjacentCells = 0
-            if (isContinguous(x - 1, y)) numberOfAdjacentCells++
-            if (isContinguous(x + 1, y)) numberOfAdjacentCells++
-            if (isContinguous(x, y - 1)) numberOfAdjacentCells++
-            if (isContinguous(x, y + 1)) numberOfAdjacentCells++
+            if (isContiguous(x - 1, y)) numberOfAdjacentCells++
+            if (isContiguous(x + 1, y)) numberOfAdjacentCells++
+            if (isContiguous(x, y - 1)) numberOfAdjacentCells++
+            if (isContiguous(x, y + 1)) numberOfAdjacentCells++
             return 4 - numberOfAdjacentCells
         }
 
+        public fun hasExteriorTop() = !isContiguous(x, y - 1)
+        public fun hasExteriorBottom() = !isContiguous(x, y + 1)
+        public fun hasExteriorLeft() = !isContiguous(x - 1, y)
+        public fun hasExteriorRight() = !isContiguous(x + 1, y)
+
         public fun getContiguousPlots(): Set<Plot> {
             val contiguous: MutableSet<Plot> = mutableSetOf()
-            if (isContinguous(x - 1, y)) contiguous.add(Plot(x - 1, y, garden))
-            if (isContinguous(x + 1, y)) contiguous.add(Plot(x + 1, y, garden))
-            if (isContinguous(x, y - 1)) contiguous.add(Plot(x, y - 1, garden))
-            if (isContinguous(x, y + 1)) contiguous.add(Plot(x, y + 1, garden))
+            if (isContiguous(x - 1, y)) contiguous.add(Plot(x - 1, y, garden))
+            if (isContiguous(x + 1, y)) contiguous.add(Plot(x + 1, y, garden))
+            if (isContiguous(x, y - 1)) contiguous.add(Plot(x, y - 1, garden))
+            if (isContiguous(x, y + 1)) contiguous.add(Plot(x, y + 1, garden))
             return contiguous
         }
 
-        public fun isContinguous(xx: Int, yy: Int): Boolean {
+        public fun isContiguous(xx: Int, yy: Int): Boolean {
             return inGarden(xx, yy) && garden[yy][xx] == plant
         }
 
