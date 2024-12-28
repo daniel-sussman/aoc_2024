@@ -12,9 +12,11 @@ class DayElevenTest {
         assertEquals(55312L, nextResult)
     }
 
-//    @Test
-//    fun partTwoIsCorrect() {
-//        val secondResult = DayEleven("testdata11.txt").second()
-//        assertEquals(81, secondResult)
-//    }
+    @Test
+    fun partTwoIsCorrect() {
+        val secondResult = DayEleven("testdata11.csv").second(6)
+        assertEquals(22L, secondResult)
+        val nextResult = DayEleven("testdata11.csv").second(25)
+        assertEquals(55312L, nextResult)
+    }
 }
