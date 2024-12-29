@@ -57,7 +57,117 @@ class DayFourteen(filepath: String, testMode: Boolean) {
                 }
             }
         }
-        println("The number of robots in each quadrant is ($robotsInQ1, $robotsInQ2, $robotsInQ3, $robotsInQ4)")
+//        println("The number of robots in each quadrant is ($robotsInQ1, $robotsInQ2, $robotsInQ3, $robotsInQ4)")
         return robotsInQ1 * robotsInQ2 * robotsInQ3 * robotsInQ4
+    }
+
+    public fun second(): Int {
+        val testRobots = input.map { config -> Robot(config, rows, cols) }
+        val interestingTurns = getInterestingTurns(testRobots, 100000)
+
+        for (turnNumber in interestingTurns) {
+            val robots = input.map { config -> Robot(config, rows, cols) }
+            for (robot in robots) robot.move(turnNumber)
+            if (evaluate(robots)) {
+                printASCII(robots)
+                return turnNumber
+            }
+        }
+        return 0
+    }
+
+    private fun getInterestingTurns(robots: List<Robot>, limit: Int): List<Int> {
+        val interestingTurns = mutableListOf<Int>()
+        var elapsedTurns = 0
+
+        for (i in 0 until limit) {
+            elapsedTurns++
+
+            for (robot in robots) {
+                robot.move(1)
+            }
+            if (possibleEasterEgg(robots)) {
+                interestingTurns.add(elapsedTurns)
+            }
+        }
+
+        return interestingTurns
+    }
+
+    public fun third(turnsToMove: Int) {
+        val robots = input.map { config -> Robot(config, rows, cols) }
+        for (robot in robots) {
+            robot.move(turnsToMove)
+        }
+        printASCII(robots)
+    }
+
+    private fun printASCII(robots: List<Robot>) {
+        val canvas = Array(rows) { y ->
+            Array(cols) { x ->
+                robots.filter { robot ->
+                    robot.x == x && robot.y == y
+                }.size
+            }
+        }
+
+        for (row in canvas) {
+            println(row.toList().map { cell -> if (cell > 0) '#' else ' ' })
+        }
+    }
+
+    private fun possibleEasterEgg(robots: List<Robot>): Boolean {
+        val alignmentCriterion = 34
+        var meetingCriterion = 0
+        for (col in 0 until cols) {
+            val robotsAligned = robots.filter { robot -> robot.x == col }.size
+            if (robotsAligned >= alignmentCriterion) meetingCriterion++
+            if (meetingCriterion > 1) return true
+        }
+        return false
+    }
+
+    private fun evaluate(robots: List<Robot>): Boolean {
+        val consecutiveCriterion = 25
+        var consecutive = 0
+        var lastY = -1
+
+        val interestingColumn = 34
+        val robotsAligned = robots.filter { robot -> robot.x == interestingColumn }
+        val sortedRobots = robotsAligned.sortedBy { robot -> robot.y }
+        for (robot in sortedRobots) {
+            if (robot.y == lastY + 1) {
+                consecutive++
+                lastY++
+            } else {
+                lastY = robot.y
+            }
+            if (consecutive == consecutiveCriterion) return true
+        }
+
+        return false
+    }
+
+    private fun easterEgg(robots: List<Robot>): Boolean {
+//        val middleColumn = cols / 2
+//        val robotsAligned = robots.filter { robot -> robot.x == middleColumn }
+//        return robotsAligned.size > 30
+//        val firstColumn = 0
+//        val robotsAligned = robots.filter { robot -> robot.x == firstColumn }
+//        return robotsAligned.size > 60
+        val alignmentCriterion = 34
+        var meetingCriterion = 0
+        for (col in 0 until cols) {
+            val robotsAligned = robots.filter { robot -> robot.x == col }.size
+            if (robotsAligned >= alignmentCriterion) meetingCriterion++
+            if (meetingCriterion > 1) return true
+        }
+        return false
+    }
+
+    private fun sampleEasterEgg(robots: List<Robot>): Int {
+        val middleColumn = cols / 2
+        val robotsAligned = robots.filter { robot -> robot.x == middleColumn }
+        return robotsAligned.size
     }
 }
