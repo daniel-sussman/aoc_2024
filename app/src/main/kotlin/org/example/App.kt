@@ -12,6 +12,6 @@ class App {
 fun main() {
     val firstResult = DaySixteen("data16.txt").first()
     println(firstResult)
-//    val secondResult = DaySixteen("testdata16.txt").second()
-//    println(secondResult)
+    val secondResult = DaySixteen("data16.txt").second()
+    println(secondResult)
 }

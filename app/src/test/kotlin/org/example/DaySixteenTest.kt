@@ -16,9 +16,15 @@ class DaySixteenTest {
         assertEquals(11048, firstResult)
     }
 
-//    @Test
-//    fun partTwoIsCorrect() {
-//        val secondResult = DayFifteenAndAHalf("testdata15.txt").second()
-//        assertEquals(9021, secondResult)
-//    }
+    @Test
+    fun partTwoIsCorrect() {
+        val secondResult = DaySixteen("testdata16.txt").second()
+        assertEquals(45, secondResult)
+    }
+
+    @Test
+    fun beAssuredPartTwoIsCorrect() {
+        val secondResult = DaySixteen("testdata16b.txt").second()
+        assertEquals(64, secondResult)
+    }
 }
