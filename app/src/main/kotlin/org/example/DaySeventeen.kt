@@ -9,7 +9,7 @@ class DaySeventeen(filepath: String) {
     private var registerC: Int
     private val program: List<Int>
     private var instructionPointer = 0
-    private val sysOut: MutableList<Int> = mutableListOf()
+    private var sysOut: MutableList<Int> = mutableListOf()
 
     private val instructions: Map<Int, (Int) -> Unit> = mapOf(
         0 to { operand -> adv(operand) },
@@ -68,6 +68,31 @@ class DaySeventeen(filepath: String) {
         }
 
         return sysOut.joinToString(",")
+    }
+
+    public fun runWithLimit(limit: Int, valueOfA: Int): List<Int> {
+        registerA = valueOfA
+        registerB = 0
+        registerC = 0
+        instructionPointer = 0
+        sysOut.clear()
+
+        while (instructionPointer < program.size) {
+            if (sysOut.size > limit) return listOf(-1)
+            nextInstruction()
+        }
+
+        return sysOut
+    }
+
+    public fun second(): Int {
+        var valueOfA = 0
+
+        while (valueOfA < 100000000) {
+            if (runWithLimit(program.size, valueOfA) == program) return valueOfA
+            valueOfA++
+        }
+        return -1
     }
 
     private fun nextInstruction() {

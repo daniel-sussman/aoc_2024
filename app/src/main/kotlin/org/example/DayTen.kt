@@ -1,6 +1,5 @@
 package org.example
 
-import org.example.DayNine.Disk
 import java.util.*
 
 class DayTen(filepath: String) {
