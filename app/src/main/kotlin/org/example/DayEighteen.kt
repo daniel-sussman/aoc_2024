@@ -48,6 +48,19 @@ class DayEighteen(filepath: String, testMode: Boolean) {
         return findShortestPath()
     }
 
+    public fun second(): String {
+        for (i in 0 until simulationLength) {
+            val coords = bytes[i]
+            memorySpace.corrupt(coords)
+        }
+        for (i in 0 until bytes.size) {
+            val coords = bytes[i]
+            memorySpace.corrupt(coords)
+            if (!exitIsReachable()) return "${bytes[i][0]},${bytes[i][1]}"
+        }
+        return ""
+    }
+
     private fun dropBytes() {
         for (i in 0 until simulationLength) {
             val coords = bytes[i]
@@ -75,5 +88,25 @@ class DayEighteen(filepath: String, testMode: Boolean) {
             }
         }
         return exit.steps
+    }
+
+    private fun exitIsReachable(): Boolean {
+        val start = memorySpace.getLocation(listOf(0, 0))!!
+        val exit = memorySpace.getLocation(listOf(size - 1, size - 1))!!
+        val visited: MutableSet<Location> = mutableSetOf(start)
+        val queue: Queue<Location> = LinkedList()
+        queue.offer(start)
+        while (queue.isNotEmpty()) {
+            val location = queue.poll()
+
+            for (neighbor in location.intactNeighbors()) {
+                if (neighbor == exit) return true
+                if (neighbor in visited) continue
+
+                visited.add(neighbor)
+                queue.offer(neighbor)
+            }
+        }
+        return false
     }
 }
