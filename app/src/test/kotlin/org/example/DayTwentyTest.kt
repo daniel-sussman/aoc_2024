@@ -5,14 +5,8 @@ import org.junit.jupiter.api.Test
 
 class DayTwentyTest {
     @Test
-    fun partOneIsCorrect() {
-        val firstResult = DayTwenty("testdata20.txt").first(8)
-        assertEquals(14, firstResult)
+    fun partTwoIsCorrect() {
+        var secondResult = DayTwenty("testdata20.txt").second(76)
+        assertEquals(3, secondResult)
     }
-
-//    @Test
-//    fun partTwoIsCorrect() {
-//        val secondResult = DayNineteen("testdata19.txt").second()
-//        assertEquals(16, secondResult)
-//    }
 }
