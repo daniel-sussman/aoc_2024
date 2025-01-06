@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7cfd71e-7a54-4e87-8f68-6dac7c7f76f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/test/kotlin/org/example/DayTwentyThreeTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.kotlin/sessions/kotlin-compiler-9929591026748503705.salive" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/DayTwentyFour.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/data24.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/testdata24.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/testdata24b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/kotlin/org/example/DayTwentyFourTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/DayTwentyThree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/DayTwentyThree.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/org/example/AppTest.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +114,8 @@
     &quot;Gradle.DayThreeTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.DayTwelveTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.DayTwelveTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DayTwentyFourTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DayTwentyFourTest.yeahPrettySurePartOneIsCorrect.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.DayTwentyTest.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.DayTwentyTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.DayTwentyTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
@@ -144,8 +141,8 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.DayTwentyThreeTest">
-    <configuration name="DayTwentyTest.partTwoIsCorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.DayTwentyFourTest">
+    <configuration name="DayTwentyFourTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -158,7 +155,31 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;org.example.DayTwentyTest.partTwoIsCorrect&quot;" />
+            <option value="&quot;org.example.DayTwentyFourTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DayTwentyFourTest.yeahPrettySurePartOneIsCorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.DayTwentyFourTest.yeahPrettySurePartOneIsCorrect&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -217,28 +238,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="kotlin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="AppKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.AppKt" />
       <module name="aoc.app.main" />
@@ -248,11 +247,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.DayTwentyThreeTest" />
+        <item itemvalue="Gradle.DayTwentyFourTest" />
         <item itemvalue="Kotlin.AppKt" />
+        <item itemvalue="Gradle.DayTwentyFourTest.yeahPrettySurePartOneIsCorrect" />
+        <item itemvalue="Gradle.DayTwentyThreeTest" />
         <item itemvalue="Gradle.DayTwentyThreeTest.partTwoIsCorrect" />
-        <item itemvalue="Gradle.kotlin [build]" />
-        <item itemvalue="Gradle.DayTwentyTest.partTwoIsCorrect" />
       </list>
     </recent_temporary>
   </component>
