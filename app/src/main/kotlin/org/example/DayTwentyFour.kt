@@ -63,4 +63,26 @@ class DayTwentyFour(filepath: String) {
         }
         return result.toString().toLong(2)
     }
+
+    public fun second(): String {
+        val x = readWires('x')
+        val y = readWires('y')
+        val z = readWires('z')
+        println(x)
+        println(y)
+        println(z)
+        return ""
+    }
+
+    private fun readWires(chr: Char): String {
+        val result = StringBuilder()
+        for (key in wiresThatStartWith(chr).keys.sorted().reversed()) {
+            result.append(wires[key])
+        }
+        return result.toString()
+    }
+
+    private fun wiresThatStartWith(chr: Char): Map<String, Int> {
+        return wires.filter { it.key.startsWith(chr) }
+    }
 }
