@@ -73,6 +73,16 @@ class DayTwentyFourB(val filepath: String) {
     }
 
     public fun second(): String {
+        /*
+        How to use this method:
+
+        1) Use #diagnoseProblems to identify problem indices (e.g. x22 + y22 -> z22)
+        2) Visualize the graph using #findNewAncestors
+        3) Identify the nodes to swap and add the pair to nodesToSwap
+        4) Repeat above steps until nodesToSwap includes 4 pairs
+         */
+
+
         val nodesToSwap = listOf(
             Pair("kfp", "hbs"),
             Pair("z27", "jcp"),

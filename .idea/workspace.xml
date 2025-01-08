@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7cfd71e-7a54-4e87-8f68-6dac7c7f76f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/DayTwentyFourB.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/testdata24c.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/DayTwentyFive.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/data25.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/testdata25.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/kotlin/org/example/DayTwentyFiveTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.kotlin/sessions/kotlin-compiler-4520285820380082727.salive" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.kotlin/sessions/kotlin-compiler-18418447283199712587.salive" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/DayTwentyFour.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/DayTwentyFour.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/org/example/DayTwentyFourTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/kotlin/org/example/DayTwentyFourTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/org/example/DayTwentyFourB.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/org/example/DayTwentyFourB.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,74 +76,123 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Gradle.AppTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build kotlin.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayEightTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayEighteenTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayEighteenTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayElevenTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayElevenTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayFifteenTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayFifteenTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayFiveTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayFiveTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayFourTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayFourTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayFourteenTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayNineTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayNineTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayNineteenTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayNineteenTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayOneTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayOneTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayOneTest.returnsCorrectInt.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DaySevenTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DaySevenTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DaySeventeenTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DaySeventeenTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DaySixTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DaySixTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DaySixTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DaySixteenTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DaySixteenTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTenTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTenTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayThirteenTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayThreeTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayThreeTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwelveTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwelveTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwentyFourTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwentyFourTest.yeahPrettySurePartOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwentyTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwentyTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwentyTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwentyThreeTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwentyThreeTest.partTwoIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwoTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DayTwoTest.partOneIsCorrect.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.kotlin [build].executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.AppKt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/danielsussman/Projects/advent_of_code/kotlin&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.AppTest.executor": "Run",
+    "Gradle.Build kotlin.executor": "Run",
+    "Gradle.DayEightTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayEighteenTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayEighteenTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayElevenTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayElevenTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayFifteenTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayFifteenTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayFiveTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayFiveTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayFourTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayFourTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayFourteenTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayNineTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayNineTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayNineteenTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayNineteenTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayOneTest.executor": "Run",
+    "Gradle.DayOneTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayOneTest.returnsCorrectInt.executor": "Run",
+    "Gradle.DaySevenTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DaySevenTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DaySeventeenTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DaySeventeenTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DaySixTest.executor": "Run",
+    "Gradle.DaySixTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DaySixTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DaySixteenTest.executor": "Run",
+    "Gradle.DaySixteenTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayTenTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayTenTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayThirteenTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayThreeTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayThreeTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayTwelveTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayTwelveTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayTwentyFiveTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayTwentyFourTest.executor": "Run",
+    "Gradle.DayTwentyFourTest.yeahPrettySurePartOneIsCorrect.executor": "Run",
+    "Gradle.DayTwentyTest.executor": "Run",
+    "Gradle.DayTwentyTest.partOneIsCorrect.executor": "Run",
+    "Gradle.DayTwentyTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayTwentyThreeTest.executor": "Run",
+    "Gradle.DayTwentyThreeTest.partTwoIsCorrect.executor": "Run",
+    "Gradle.DayTwoTest.executor": "Run",
+    "Gradle.DayTwoTest.partOneIsCorrect.executor": "Run",
+    "Gradle.kotlin [build].executor": "Run",
+    "Kotlin.AppKt.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/danielsussman/Projects/advent_of_code/kotlin",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="org.example" />
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.AppKt">
+    <configuration name="DayTwentyFiveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.DayTwentyFiveTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DayTwentyFiveTest.partOneIsCorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.DayTwentyFiveTest.partOneIsCorrect&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="DayTwentyFourTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -190,54 +241,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DayTwentyThreeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.DayTwentyThreeTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="DayTwentyThreeTest.partTwoIsCorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.DayTwentyThreeTest.partTwoIsCorrect&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="AppKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.AppKt" />
       <module name="aoc.app.main" />
@@ -248,10 +251,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.AppKt" />
+        <item itemvalue="Gradle.DayTwentyFiveTest" />
+        <item itemvalue="Gradle.DayTwentyFiveTest.partOneIsCorrect" />
         <item itemvalue="Gradle.DayTwentyFourTest" />
         <item itemvalue="Gradle.DayTwentyFourTest.yeahPrettySurePartOneIsCorrect" />
-        <item itemvalue="Gradle.DayTwentyThreeTest" />
-        <item itemvalue="Gradle.DayTwentyThreeTest.partTwoIsCorrect" />
       </list>
     </recent_temporary>
   </component>
